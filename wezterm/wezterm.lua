@@ -5,7 +5,7 @@ local act = wezterm.action
 local config = wezterm.config_builder()
 
 -- Font
-config.font = wezterm.font 'DroidSansMono Nerd Font'
+config.font = wezterm.font 'DroidSansM Nerd Font'
 config.font_size = 14.0
 
 -- Color scheme
