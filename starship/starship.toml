@@ -24,7 +24,7 @@ success_symbol = "[❯](10)"
 error_symbol = "[❯](9)"
 
 [directory]
-format = "[in](italic) [$path](bold bright-blue)"
+format = "[in](italic) [$path](bright-blue)"
 truncation_length = 0
 truncation_symbol = ''
 home_symbol = "~"
