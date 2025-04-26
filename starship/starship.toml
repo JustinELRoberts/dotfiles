@@ -1,0 +1,74 @@
+format = """
+$username \
+$directory \
+$git_branch \
+$git_status\
+$fill\
+${custom.live-clock-icon}\
+$time\
+\n$character
+"""
+
+# Use manually specified color overrides
+palette = 'kanagawa'
+
+# The logic for this sucks and it adds a blank line at the top of every `clear`.
+# I instead do this manually in my .zshrc
+add_newline = false
+
+[fill]
+symbol = " "
+
+[character]
+success_symbol = "[❯](10)"
+error_symbol = "[❯](9)"
+
+[directory]
+format = "[in](italic) [$path](bold bright-blue)"
+truncation_length = 0
+truncation_symbol = ''
+home_symbol = "~"
+read_only = " "
+
+[username]
+style_user = "147"
+style_root = "bright-red bold"
+format = "[$user]($style)"
+disabled = false
+show_always = true
+
+[git_status]
+untracked = "[ ](yellow)"
+modified = "[ ](red)"
+staged = "[ ](green)"
+deleted = "[ ](red)"
+ahead = "[ ](yellow)"
+behind = "[ ](yellow)"
+diverged = "[󰦻 ](cyan)"
+conflicted = "[! ](red)"
+stashed = ""
+typechanged = ""
+renamed = ""
+up_to_date = ""
+format = '$all_status$ahead_behind'
+
+[git_branch]
+symbol = "[](2)"
+style = "black bg:2"
+format = '[$symbol ]($style)[$branch](bold black bg:2)[](2)'
+
+[time]
+disabled = false
+time_format = "%R"
+format = '[$time](bright-blue)'
+
+[custom.live-clock-icon]
+command = 'echo "" | cut -c $(($(date +%H)%12+1))'
+description = "Live updating clock icon, changes hourly. Icons can be customized to your liking."
+when = true
+style = "fg:bright-blue"
+format = "[$output ]($style)"
+
+# Overwrite the black color
+[palettes.kanagawa]
+black = '#181616'

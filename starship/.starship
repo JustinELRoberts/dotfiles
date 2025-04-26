@@ -1,0 +1,19 @@
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+
+# Prompt Engineering Starship:
+# Below is a hack to add newlines between prompts without 
+# adding one at the beginnning of the file (which starship option does)
+PROMPT_NEEDS_NEWLINE=false
+
+precmd() {
+  if [[ "$PROMPT_NEEDS_NEWLINE" == true ]]; then
+    echo
+  fi
+  PROMPT_NEEDS_NEWLINE=true
+}
+
+clear() {
+  PROMPT_NEEDS_NEWLINE=false
+  command clear
+}
+
