@@ -9,7 +9,7 @@ config.font = wezterm.font 'DroidSansM Nerd Font'
 config.font_size = 14.0
 
 -- Color scheme
-config.color_scheme = 'Kanagawa Dragon (Gogh)'
+config.color_scheme = 'kanagawa-dragon'
 
 -- Keybinds
 config.keys = {
