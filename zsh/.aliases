@@ -4,3 +4,5 @@ alias vim=nvim
 
 alias ls=lsd
 alias l="lsd -la"
+
+alias dc="docker compose"
