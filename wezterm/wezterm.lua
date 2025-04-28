@@ -41,4 +41,7 @@ table.insert(config.keys, { key = 'RightArrow', mods = 'CTRL|SHIFT', action = ac
 -- This seems to imrpove performance, idk
 config.front_end = "WebGpu"
 
+-- Turn off stupid bell noise
+config.audible_bell = "Disabled"
+
 return config
