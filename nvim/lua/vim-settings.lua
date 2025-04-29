@@ -25,20 +25,11 @@ vim.keymap.set('n', '<leader><leader>x', '<cmd>source %<CR>')
 vim.keymap.set('n', '<leader>x', ':.lua<CR>')
 vim.keymap.set('v', '<leader>x', ':lua<CR>')
 
--- Allow yank to clipboard on WSL
-if vim.fn.has("wsl") then
-  vim.g.clipboard = {
-    name = "clip.exe (Copy Only)",
-    copy = {
-      ["+"] = "/mnt/c/Windows/System32/clip.exe",
-      ["*"] = "/mnt/c/Windows/System32/clip.exe"
-    },
-    paste = {
-      ["+"] = "/mnt/c/Windows/System32/clip.exe",
-      ["*"] = "/mnt/c/Windows/System32/clip.exe"
-    },
-    cache_enabled = true
-  }
+-- Allow yank to clipboard
+if vim.fn.has("unnamedplus") then
+    vim.g.clipboard=unnamedplus
+else
+    vim.g.clipboard=unnamed
 end
 
 -- Rounded borders around LSP autocomplete etc
