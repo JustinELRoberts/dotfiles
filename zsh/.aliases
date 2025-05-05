@@ -3,7 +3,9 @@ alias c=clear
 alias vim=nvim
 
 alias ls=lsd
+alias lst="ls --tree"
 alias l="lsd -la"
+alias lt="l --tree"
 
 alias dc="docker compose"
 
