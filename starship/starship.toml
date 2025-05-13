@@ -1,6 +1,7 @@
 format = """
 $username \
 $directory \
+$hostname \
 $git_branch \
 $git_status\
 $fill\
