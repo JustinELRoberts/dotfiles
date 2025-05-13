@@ -21,18 +21,23 @@ palette = 'kanagawa'
 black = '#181616'
 
 [username]
-style_user = "147"
-style_root = "bright-red bold"
+style_user = "bold 147"
+style_root = "bold bright-red"
 format = "[$user]($style)"
 disabled = false
 show_always = true
 
 [directory]
-format = "[in](italic) [$path](bright-blue)"
+format = "[in](italic) [$path](bold bright-blue)"
 truncation_length = 0
 truncation_symbol = ''
 home_symbol = "~"
 read_only = " "
+
+[hostname]
+ssh_only = true
+format = 'on [$hostname](bold red) '
+disabled = false
 
 [git_branch]
 symbol = "[](2)"
