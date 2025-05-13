@@ -37,7 +37,7 @@ read_only = " "
 
 [hostname]
 ssh_only = true
-format = 'on [$hostname](bold red) '
+format = '[on](italic) [$hostname](bold red) '
 disabled = false
 
 [git_branch]
