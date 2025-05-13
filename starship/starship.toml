@@ -9,19 +9,23 @@ $time\
 \n$character
 """
 
-# Use manually specified color overrides
-palette = 'kanagawa'
-
 # The logic for this sucks and it adds a blank line at the top of every `clear`.
 # I instead do this manually in my .zshrc
 add_newline = false
 
-[fill]
-symbol = " "
+# Use manually specified color overrides
+palette = 'kanagawa'
 
-[character]
-success_symbol = "[❯](10)"
-error_symbol = "[❯](9)"
+# Overwrite the black color
+[palettes.kanagawa]
+black = '#181616'
+
+[username]
+style_user = "147"
+style_root = "bright-red bold"
+format = "[$user]($style)"
+disabled = false
+show_always = true
 
 [directory]
 format = "[in](italic) [$path](bright-blue)"
@@ -30,12 +34,10 @@ truncation_symbol = ''
 home_symbol = "~"
 read_only = " "
 
-[username]
-style_user = "147"
-style_root = "bright-red bold"
-format = "[$user]($style)"
-disabled = false
-show_always = true
+[git_branch]
+symbol = "[](2)"
+style = "black bg:2"
+format = '[$symbol ]($style)[$branch](bold black bg:2)[](2)'
 
 [git_status]
 untracked = "[ ](yellow)"
@@ -52,15 +54,8 @@ renamed = ""
 up_to_date = ""
 format = '$all_status$ahead_behind'
 
-[git_branch]
-symbol = "[](2)"
-style = "black bg:2"
-format = '[$symbol ]($style)[$branch](bold black bg:2)[](2)'
-
-[time]
-disabled = false
-time_format = "%R"
-format = '[$time](bright-blue)'
+[fill]
+symbol = " "
 
 [custom.live-clock-icon]
 command = 'echo "" | cut -c $(($(date +%H)%12+1))'
@@ -69,6 +64,11 @@ when = true
 style = "fg:bright-blue"
 format = "[$output ]($style)"
 
-# Overwrite the black color
-[palettes.kanagawa]
-black = '#181616'
+[time]
+disabled = false
+time_format = "%R"
+format = '[$time](bright-blue)'
+
+[character]
+success_symbol = "[❯](10)"
+error_symbol = "[❯](9)"
