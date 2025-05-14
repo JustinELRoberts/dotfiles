@@ -30,8 +30,7 @@ show_always = true
 
 [directory]
 format = "[in](italic) [$path](bold bright-blue)"
-truncation_length = 0
-truncation_symbol = ''
+truncation_symbol = '…/'
 home_symbol = "~"
 read_only = " "
 
