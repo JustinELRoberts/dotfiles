@@ -91,6 +91,14 @@ return {
         }
       })
 
+      lspconfig.ruff.setup({
+        settings = {
+          python = {
+            pythonPath = vim.fn.exepath("python3"),
+          },
+        }
+      })
+
       lspconfig.bash.setup({
         on_attach = lspformat.on_attach
       })
