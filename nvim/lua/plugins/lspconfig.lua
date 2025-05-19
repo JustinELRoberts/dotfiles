@@ -1,3 +1,11 @@
+-- This function is used below to add a keybind to toggle `virtual_text` diagnostics
+local toggle_virtual_text = function()
+  local current_config = vim.diagnostic.config()
+  vim.diagnostic.config({
+    virtual_text = not current_config.virtual_text
+  })
+end
+
 return {
   {
     "williamboman/mason.nvim",
@@ -114,6 +122,7 @@ return {
       end)
 
       vim.diagnostic.config({ virtual_lines = { current_line = true }, virtual_text = true })
+      vim.keymap.set('n', '<leader>d', toggle_virtual_text)
     end,
   }
 }
