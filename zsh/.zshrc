@@ -16,6 +16,10 @@ export ZSH_AUTOSUGGEST_STRATEGY=(
     completion
 )
 
+# Use Ctrl-P and Ctrl-N to go backwards and forwards in the autosuggestions
+bindkey "^P" history-beginning-search-backward
+bindkey "^N" history-beginning-search-forward
+
 # Use oh my zsh
 source $ZSH/oh-my-zsh.sh
 
