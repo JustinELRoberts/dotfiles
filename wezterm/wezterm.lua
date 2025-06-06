@@ -35,8 +35,6 @@ for i = 1, 8 do
 end
 
 -- Keybinds to go to the next/previous tab
-table.insert(config.keys, { key = 'LeftArrow', mods = 'CTRL|SHIFT', action = act.ActivateTabRelative(-1) })
-table.insert(config.keys, { key = 'RightArrow', mods = 'CTRL|SHIFT', action = act.ActivateTabRelative(1) })
 table.insert(config.keys, { key = 'h', mods = 'CTRL|SHIFT', action = act.ActivateTabRelative(-1) })
 table.insert(config.keys, { key = 'l', mods = 'CTRL|SHIFT', action = act.ActivateTabRelative(1) })
 
