@@ -17,12 +17,12 @@ export ZSH_AUTOSUGGEST_STRATEGY=(
     completion
 )
 
+# As the name implies, this function is used to override `zsh-vi-mode` settings
 function vi_mode_overrides() {
   # Use Ctrl-P and Ctrl-N to go backwards and forwards in the autosuggestions
   bindkey "^P" history-beginning-search-backward
   bindkey "^N" history-beginning-search-forward
 }
-
 zvm_after_init_commands+=(vi_mode_overrides)
 
 # Use oh my zsh
