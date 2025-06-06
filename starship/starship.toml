@@ -75,5 +75,6 @@ time_format = "%R"
 format = '[$time](bright-blue)'
 
 [character]
-success_symbol = "[❯](10)"
-error_symbol = "[❯](9)"
+success_symbol = "[❯](bold 10)"
+error_symbol = "[❯](bold 9)"
+vimcmd_symbol = "[❮](bold blue)"
