@@ -64,7 +64,7 @@ symbol = " "
 
 [custom.live-clock-icon]
 command = 'echo "" | cut -c $(($(date +%H)%12+1))'
-description = "Live updating clock icon, changes hourly. Icons can be customized to your liking."
+description = "Live updating clock icon, changes hourly."
 when = true
 style = "fg:bright-blue"
 format = "[$output ]($style)"
@@ -77,4 +77,4 @@ format = '[$time](bright-blue)'
 [character]
 success_symbol = "[❯](bold 10)"
 error_symbol = "[❯](bold 9)"
-vimcmd_symbol = "[❮](bold blue)"
+vimcmd_symbol = "[❮](bold bright-blue)"
