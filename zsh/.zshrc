@@ -8,17 +8,22 @@ plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
+  zsh-vi-mode
 )
 
-# Allow autosuggestion to show tab-completion, falling back to history
+# Allow autosuggestion to show history-based completion, falling back to tab-completion
 export ZSH_AUTOSUGGEST_STRATEGY=(
     history
     completion
 )
 
-# Use Ctrl-P and Ctrl-N to go backwards and forwards in the autosuggestions
-bindkey "^P" history-beginning-search-backward
-bindkey "^N" history-beginning-search-forward
+function vi_mode_overrides() {
+  # Use Ctrl-P and Ctrl-N to go backwards and forwards in the autosuggestions
+  bindkey "^P" history-beginning-search-backward
+  bindkey "^N" history-beginning-search-forward
+}
+
+zvm_after_init_commands+=(vi_mode_overrides)
 
 # Use oh my zsh
 source $ZSH/oh-my-zsh.sh
