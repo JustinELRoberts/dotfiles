@@ -25,14 +25,6 @@ config.keys = {
     action = act.SpawnTab 'CurrentPaneDomain',
   },
 }
--- Keybinds to go to the Nth tab with CTRL+SHIFT+NUM
-for i = 1, 8 do
-  table.insert(config.keys, {
-    key = tostring(i),
-    mods = 'CTRL|SHIFT',
-    action = act.ActivateTab(i - 1),
-  })
-end
 
 -- Keybinds to go to the next/previous tab
 table.insert(config.keys, { key = 'h', mods = 'CTRL|SHIFT', action = act.ActivateTabRelative(-1) })
