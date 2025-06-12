@@ -27,12 +27,12 @@ config.keys = {
 }
 
 -- Keybinds to go to the next/previous tab
-table.insert(config.keys, { key = 'h', mods = 'CTRL|SHIFT', action = act.ActivateTabRelative(-1) })
-table.insert(config.keys, { key = 'l', mods = 'CTRL|SHIFT', action = act.ActivateTabRelative(1) })
+table.insert(config.keys, { key = 'j', mods = 'CTRL|SHIFT', action = act.ActivateTabRelative(-1) })
+table.insert(config.keys, { key = 'k', mods = 'CTRL|SHIFT', action = act.ActivateTabRelative(1) })
 
 -- Keybinds to move the currently selected tab
-table.insert(config.keys, { key = 'j', mods = 'CTRL|SHIFT', action = act.MoveTabRelative(-1) })
-table.insert(config.keys, { key = 'k', mods = 'CTRL|SHIFT', action = act.MoveTabRelative(1) })
+table.insert(config.keys, { key = 'h', mods = 'CTRL|SHIFT', action = act.MoveTabRelative(-1) })
+table.insert(config.keys, { key = 'l', mods = 'CTRL|SHIFT', action = act.MoveTabRelative(1) })
 
 -- This seems to imrpove performance, idk
 config.front_end = "WebGpu"
