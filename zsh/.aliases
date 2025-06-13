@@ -10,6 +10,4 @@ alias lt="l --tree"
 alias dc="docker compose"
 
 alias grep=rg
-alias cat=bat
-
-alias gd="git diff --name-only --relative --diff-filter=d | xargs bat --diff"
+alias cat="bat --theme=base16"
