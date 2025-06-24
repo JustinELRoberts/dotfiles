@@ -107,7 +107,7 @@ return {
         }
       })
 
-      lspconfig.bash.setup({
+      lspconfig.bashls.setup({
         on_attach = lspformat.on_attach
       })
 
