@@ -5,7 +5,8 @@ return {
     tag = '0.1.8',
     dependencies = {
       'nvim-lua/plenary.nvim',
-      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
+      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+      "debugloop/telescope-undo.nvim",
     },
     config = function()
       local builtin = require('telescope.builtin')
@@ -30,6 +31,9 @@ return {
         })
       end, { desc = 'Search every file that is installed in a plugin' })
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Search help tags' })
+
+      -- Used to bounce between previous states
+      vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>")
     end
   },
 
@@ -58,5 +62,5 @@ return {
       telescope.load_extension("ui-select")
       telescope.load_extension("fzf")
     end
-  }
+  },
 }
