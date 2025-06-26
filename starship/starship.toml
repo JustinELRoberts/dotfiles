@@ -31,6 +31,8 @@ show_always = true
 [directory]
 format = "[in](italic) [$path](bold bright-blue)"
 truncation_symbol = '…/'
+truncation_length = 5
+truncate_to_repo = false
 home_symbol = "~"
 read_only = " "
 
