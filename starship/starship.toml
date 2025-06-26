@@ -11,7 +11,7 @@ $time\
 """
 
 # The logic for this sucks and it adds a blank line at the top of every `clear`.
-# I instead do this manually in my .zshrc
+# I instead do this manually in .starship (which I source in my .zshrc)
 add_newline = false
 
 # Use manually specified color overrides
