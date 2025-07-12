@@ -17,8 +17,8 @@ vim.wo.relativenumber = true
 vim.opt.cursorline = true
 
 -- Keybinds to save/quit
-vim.keymap.set('n', '<leader>qq', ':wqa<CR>')
-vim.keymap.set('v', '<leader>qq', '<Esc><CR>:wqa<CR>')
+vim.keymap.set('n', '<leader>q', ':wqa<CR>')
+vim.keymap.set('v', '<leader>q', '<Esc><CR>:wqa<CR>')
 
 -- Keybinds to execute some lua
 vim.keymap.set('n', '<leader><leader>x', '<cmd>source %<CR>')
@@ -27,9 +27,9 @@ vim.keymap.set('v', '<leader>x', ':lua<CR>')
 
 -- Allow yank to clipboard
 if vim.fn.has("unnamedplus") then
-    vim.g.clipboard=unnamedplus
+  vim.g.clipboard = unnamedplus
 else
-    vim.g.clipboard=unnamed
+  vim.g.clipboard = unnamed
 end
 
 -- Rounded borders around LSP autocomplete etc
