@@ -20,6 +20,9 @@ vim.opt.cursorline = true
 vim.keymap.set('n', '<leader>q', ':wqa<CR>')
 vim.keymap.set('v', '<leader>q', '<Esc><CR>:wqa<CR>')
 
+vim.keymap.set('n', '<leader>w', ':w<CR>')
+vim.keymap.set('v', '<leader>w', '<Esc><CR>:w<CR>')
+
 -- Keybinds to execute some lua
 vim.keymap.set('n', '<leader><leader>x', '<cmd>source %<CR>')
 vim.keymap.set('n', '<leader>x', ':.lua<CR>')
