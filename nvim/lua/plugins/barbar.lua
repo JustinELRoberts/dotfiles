@@ -9,7 +9,18 @@ return {
     barbar.setup({
       clickable = false,
       icons = {
-        inactive = { button = "" }
+        button = "",
+        diagnostics = {
+          [vim.diagnostic.severity.ERROR] = { enabled = true },
+          [vim.diagnostic.severity.WARN] = { enabled = true },
+          [vim.diagnostic.severity.INFO] = { enabled = false },
+          [vim.diagnostic.severity.HINT] = { enabled = false },
+        },
+        gitsigns = {
+          added = { enabled = true, icon = '+' },
+          changed = { enabled = true, icon = '~' },
+          deleted = { enabled = true, icon = '-' },
+        },
       }
     })
 
@@ -29,6 +40,8 @@ return {
     vim.keymap.set('n', '<leader>bd', ':BufferClose<CR>')
     -- Delete all buffers except the currenly open one
     vim.keymap.set('n', '<leader>bo', ':BufferCloseAllButCurrent<CR>')
+    -- Delete all buffers except pinned (which I never do, so all)
+    vim.keymap.set('n', '<leader>ba', ':BufferCloseAllButPinned<CR>')
     -- Delete all buffers to the left
     vim.keymap.set('n', '<leader>bl', ':BufferCloseBuffersLeft<CR>')
     -- Delete all buffers to the right
