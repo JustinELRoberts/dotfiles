@@ -8,8 +8,13 @@ local config = wezterm.config_builder()
 config.font = wezterm.font 'DroidSansM Nerd Font'
 config.font_size = 14.0
 
--- Color scheme
-config.color_scheme = 'kanagawa-dragon'
+-- Color scheme; autonatically choose light vs dark mode depending on OS settings
+local appearance = wezterm.gui.get_appearance()
+if appearance == 'Dark' then
+  config.color_scheme = 'Kanagawa Dragon (Gogh)'
+else
+  config.color_scheme = 'Kanagawa (Gogh)'
+end
 
 -- Keybinds
 config.keys = {
