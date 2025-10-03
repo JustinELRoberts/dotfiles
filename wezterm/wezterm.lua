@@ -11,7 +11,7 @@ config.font_size = 14.0
 -- Color scheme; autonatically choose light vs dark mode depending on OS settings
 local appearance = wezterm.gui.get_appearance()
 if appearance == 'Dark' then
-  config.color_scheme = 'Kanagawa Dragon (Gogh)'
+  config.color_scheme = 'kanagawa-dragon'
 else
   config.color_scheme = 'Kanagawa (Gogh)'
 end
