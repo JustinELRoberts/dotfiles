@@ -1,0 +1,10 @@
+# Theming
+theme = dark:Kanagawa Dragon,light:Kanagawa Wave
+font-family = "DroidSansM Nerd Font'
+font-size = 16
+
+# Keybinds
+keybind = shift+ctrl+h=move_tab:-1
+keybind = shift+ctrl+j=previous_tab
+keybind = shift+ctrl+k=next_tab
+keybind = shift+ctrl+l=move_tab:1
