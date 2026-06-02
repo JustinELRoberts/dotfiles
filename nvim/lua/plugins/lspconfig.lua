@@ -26,12 +26,16 @@ return {
 				"pyright",
 				"ruff",
 				"rust_analyzer",
-				"stylua",
 				"ts_ls",
 			},
 		},
 		dependencies = {
-			{ "mason-org/mason.nvim", opts = {} },
+			{
+				"mason-org/mason.nvim",
+				opts = {
+					ensure_installed = { "stylua" },
+				},
+			},
 			"neovim/nvim-lspconfig",
 		},
 	},
