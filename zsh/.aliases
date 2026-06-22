@@ -11,3 +11,5 @@ alias dc="docker compose"
 
 alias grep=rg
 alias cat="bat --theme=base16"
+
+alias zj=zellij

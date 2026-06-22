@@ -1,5 +1,7 @@
 # NOTE: Make sure to create a symlink from ~/.zshrc to here
 
+export SHELL=$(which zsh)
+
 # Path to the Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
