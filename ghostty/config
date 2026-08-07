@@ -9,7 +9,10 @@ shell-integration-features = no-cursor
 fullscreen = true
 
 # Keybinds
-keybind = shift+ctrl+h=move_tab:-1
-keybind = shift+ctrl+j=previous_tab
-keybind = shift+ctrl+k=next_tab
-keybind = shift+ctrl+l=move_tab:1
+# Tab navigation
+keybind = shift+ctrl+h=previous_tab
+keybind = shift+ctrl+l=next_tab
+
+# Tab ordering
+keybind = shift+ctrl+i=move_tab:-1
+keybind = shift+ctrl+o=move_tab:1
