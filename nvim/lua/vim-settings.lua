@@ -19,6 +19,11 @@ vim.opt.signcolumn = "yes"
 -- Wrapped lines continue at the same indent as the line they belong to
 vim.opt.breakindent = true
 
+-- Bare j/k move by screen row through wrapped lines; with a count (5j) they
+-- move by real lines so relative line numbers still line up
+vim.keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, desc = "Down (through wrapped lines)" })
+vim.keymap.set({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, desc = "Up (through wrapped lines)" })
+
 -- Highlight the selected row
 vim.opt.cursorline = true
 
