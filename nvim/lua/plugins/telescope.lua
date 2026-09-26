@@ -55,6 +55,6 @@ return {
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Search help tags" })
 
 		-- Used to bounce between previous states
-		vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>")
+		vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>", { desc = "Search undo history" })
 	end,
 }

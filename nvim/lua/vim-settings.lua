@@ -30,16 +30,16 @@ vim.opt.smartcase = true
 vim.opt.updatetime = 250
 
 -- Keybinds to save/quit
-vim.keymap.set('n', '<leader>q', ':wqa<CR>')
-vim.keymap.set('v', '<leader>q', '<Esc>:wqa<CR>')
+vim.keymap.set('n', '<leader>q', ':wqa<CR>', { desc = "Save all and quit" })
+vim.keymap.set('v', '<leader>q', '<Esc>:wqa<CR>', { desc = "Save all and quit" })
 
-vim.keymap.set('n', '<leader>w', ':w<CR>')
-vim.keymap.set('v', '<leader>w', '<Esc>:w<CR>')
+vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = "Save file" })
+vim.keymap.set('v', '<leader>w', '<Esc>:w<CR>', { desc = "Save file" })
 
 -- Keybinds to execute some lua
-vim.keymap.set('n', '<leader><leader>x', '<cmd>source %<CR>')
-vim.keymap.set('n', '<leader>x', ':.lua<CR>')
-vim.keymap.set('v', '<leader>x', ':lua<CR>')
+vim.keymap.set('n', '<leader><leader>x', '<cmd>source %<CR>', { desc = "Source current file" })
+vim.keymap.set('n', '<leader>x', ':.lua<CR>', { desc = "Run current line as Lua" })
+vim.keymap.set('v', '<leader>x', ':lua<CR>', { desc = "Run selection as Lua" })
 
 -- Allow yank to clipboard
 vim.opt.clipboard = "unnamedplus"
@@ -60,9 +60,9 @@ end
 -- Since every yank/delete goes to the clipboard, keep the two operations that
 -- destroy it without copying anything from doing so.
 -- Visual-mode `p` swaps the clipboard for the text it overwrote; `P` doesn't.
-vim.keymap.set("x", "p", "P")
+vim.keymap.set("x", "p", "P", { desc = "Paste without replacing clipboard" })
 -- A single-character delete is never worth losing the clipboard over.
-vim.keymap.set({ "n", "x" }, "x", '"_x')
+vim.keymap.set({ "n", "x" }, "x", '"_x', { desc = "Delete char without copying" })
 
 -- Rounded borders around LSP autocomplete etc
 vim.o.winborder = 'rounded'

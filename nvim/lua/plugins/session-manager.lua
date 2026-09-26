@@ -9,7 +9,7 @@ return {
       autoload_mode = config.AutoloadMode.GitSession,               -- Define what to do when Neovim is started without arguments. See "Autoload mode" section below.
     })
 
-    vim.keymap.set('n', '<leader>sl', session_manager.load_session)
-    vim.keymap.set('n', '<leader>sd', session_manager.delete_session)
+    vim.keymap.set('n', '<leader>sl', session_manager.load_session, { desc = "Load session" })
+    vim.keymap.set('n', '<leader>sd', session_manager.delete_session, { desc = "Delete session" })
   end
 }

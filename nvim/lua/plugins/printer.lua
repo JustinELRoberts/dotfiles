@@ -19,7 +19,7 @@ return {
 		})
 
 		-- Print currently hovered word
-		vim.keymap.set("n", "gp", "<Plug>(printer_print)iw")
-		vim.keymap.set("v", "gp", "<Plug>(printer_print)")
+		vim.keymap.set("n", "gp", "<Plug>(printer_print)iw", { desc = "Print word under cursor" })
+		vim.keymap.set("v", "gp", "<Plug>(printer_print)", { desc = "Print selection" })
 	end,
 }

@@ -25,27 +25,27 @@ return {
     })
 
     -- Go to a specific buffer
-    vim.keymap.set("", "<leader>bb", ":BufferPick 1<CR>")
-    vim.keymap.set("", "<leader>b1", ":BufferGoto 1<CR>")
-    vim.keymap.set("", "<leader>b2", ":BufferGoto 2<CR>")
-    vim.keymap.set("", "<leader>b3", ":BufferGoto 3<CR>")
-    vim.keymap.set("", "<leader>b4", ":BufferGoto 4<CR>")
-    vim.keymap.set("", "<leader>b5", ":BufferGoto 5<CR>")
-    vim.keymap.set("", "<leader>b6", ":BufferGoto 6<CR>")
-    vim.keymap.set("", "<leader>b7", ":BufferGoto 7<CR>")
-    vim.keymap.set("", "<leader>b8", ":BufferGoto 8<CR>")
-    vim.keymap.set("", "<leader>b9", ":BufferGoto 9<CR>")
+    vim.keymap.set("", "<leader>bb", ":BufferPick 1<CR>", { desc = "Pick buffer" })
+    vim.keymap.set("", "<leader>b1", ":BufferGoto 1<CR>", { desc = "Go to buffer 1" })
+    vim.keymap.set("", "<leader>b2", ":BufferGoto 2<CR>", { desc = "Go to buffer 2" })
+    vim.keymap.set("", "<leader>b3", ":BufferGoto 3<CR>", { desc = "Go to buffer 3" })
+    vim.keymap.set("", "<leader>b4", ":BufferGoto 4<CR>", { desc = "Go to buffer 4" })
+    vim.keymap.set("", "<leader>b5", ":BufferGoto 5<CR>", { desc = "Go to buffer 5" })
+    vim.keymap.set("", "<leader>b6", ":BufferGoto 6<CR>", { desc = "Go to buffer 6" })
+    vim.keymap.set("", "<leader>b7", ":BufferGoto 7<CR>", { desc = "Go to buffer 7" })
+    vim.keymap.set("", "<leader>b8", ":BufferGoto 8<CR>", { desc = "Go to buffer 8" })
+    vim.keymap.set("", "<leader>b9", ":BufferGoto 9<CR>", { desc = "Go to buffer 9" })
 
     -- Delete the current buffer
-    vim.keymap.set('n', '<leader>bd', ':BufferClose<CR>')
+    vim.keymap.set('n', '<leader>bd', ':BufferClose<CR>', { desc = "Close buffer" })
     -- Delete all buffers except the currenly open one
-    vim.keymap.set('n', '<leader>bo', ':BufferCloseAllButCurrent<CR>')
+    vim.keymap.set('n', '<leader>bo', ':BufferCloseAllButCurrent<CR>', { desc = "Close all other buffers" })
     -- Delete all buffers except pinned (which I never do, so all)
-    vim.keymap.set('n', '<leader>ba', ':BufferCloseAllButPinned<CR>')
+    vim.keymap.set('n', '<leader>ba', ':BufferCloseAllButPinned<CR>', { desc = "Close all unpinned buffers" })
     -- Delete all buffers to the left
-    vim.keymap.set('n', '<leader>bl', ':BufferCloseBuffersLeft<CR>')
+    vim.keymap.set('n', '<leader>bl', ':BufferCloseBuffersLeft<CR>', { desc = "Close buffers to the left" })
     -- Delete all buffers to the right
-    vim.keymap.set('n', '<leader>br', ':BufferCloseBuffersRight<CR>')
+    vim.keymap.set('n', '<leader>br', ':BufferCloseBuffersRight<CR>', { desc = "Close buffers to the right" })
 
     -- Go N buffers to the left/right
     vim.keymap.set('n', ']b', function()
@@ -57,7 +57,7 @@ return {
       do
         vim.cmd('BufferNext')
       end
-    end)
+    end, { desc = "Next buffer" })
     vim.keymap.set('n', '[b', function()
       local count = vim.v.count
       if count == 0 then
@@ -67,7 +67,7 @@ return {
       do
         vim.cmd('BufferPrevious')
       end
-    end)
+    end, { desc = "Previous buffer" })
 
     -- Move (reorder) the current buffer N buffers to the left/right
     vim.keymap.set('n', ']B', function()
@@ -79,7 +79,7 @@ return {
       do
         vim.cmd('BufferMoveNext')
       end
-    end)
+    end, { desc = "Move buffer right" })
     vim.keymap.set('n', '[B', function()
       local count = vim.v.count
       if count == 0 then
@@ -89,6 +89,6 @@ return {
       do
         vim.cmd('BufferMovePrevious')
       end
-    end)
+    end, { desc = "Move buffer left" })
   end
 }

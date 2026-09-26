@@ -8,10 +8,10 @@ return {
     "MunifTanjim/nui.nvim",
   },
   config = function()
-    vim.keymap.set('n', '<leader>fe', ':Neotree filesystem reveal left<CR>')
-    vim.keymap.set('n', '<leader>be', ':Neotree buffers reveal left<CR>')
-    vim.keymap.set('n', '<leader>ge', ':Neotree git_status reveal left<CR>')
-    vim.keymap.set('n', '<leader>ce', ':Neotree close<CR>')
+    vim.keymap.set('n', '<leader>fe', ':Neotree filesystem reveal left<CR>', { desc = "File explorer" })
+    vim.keymap.set('n', '<leader>be', ':Neotree buffers reveal left<CR>', { desc = "Buffer explorer" })
+    vim.keymap.set('n', '<leader>ge', ':Neotree git_status reveal left<CR>', { desc = "Git status explorer" })
+    vim.keymap.set('n', '<leader>ce', ':Neotree close<CR>', { desc = "Close explorer" })
 
     require("neo-tree").setup({
       event_handlers = {

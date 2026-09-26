@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>cd", vim.lsp.buf.definition)
+vim.keymap.set("n", "<leader>cd", vim.lsp.buf.definition, { desc = "Go to definition" })
 
 -- Show inline type/parameter hints for every server that supports them
 vim.lsp.inlay_hint.enable(true)
@@ -15,4 +15,4 @@ local toggle_diagnostics = function()
 end
 
 vim.diagnostic.config({ virtual_lines = { current_line = true }, virtual_text = false })
-vim.keymap.set("n", "<leader>d", toggle_diagnostics)
+vim.keymap.set("n", "<leader>d", toggle_diagnostics, { desc = "Toggle diagnostics inline/virtual lines" })
