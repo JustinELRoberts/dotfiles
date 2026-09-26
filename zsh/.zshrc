@@ -30,6 +30,10 @@ zvm_after_init_commands+=(vi_mode_overrides)
 # Use oh my zsh
 source $ZSH/oh-my-zsh.sh
 
+# Save as much history as we keep in memory (oh-my-zsh saves only 10000)
+HISTSIZE=50000
+SAVEHIST=50000
+
 # Theme for bat, including when other tools (fzf previews, etc.) invoke it
 export BAT_THEME=base16
 
