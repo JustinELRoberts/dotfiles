@@ -16,6 +16,9 @@ vim.wo.relativenumber = true
 -- Highlight the selected row
 vim.opt.cursorline = true
 
+-- Keep undo history across restarts (stored in ~/.local/state/nvim/undo/)
+vim.opt.undofile = true
+
 -- Keybinds to save/quit
 vim.keymap.set('n', '<leader>q', ':wqa<CR>')
 vim.keymap.set('v', '<leader>q', '<Esc><CR>:wqa<CR>')
