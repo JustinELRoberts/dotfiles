@@ -2,7 +2,7 @@ return {
 	"rareitems/printer.nvim",
 	config = function()
 		require("printer").setup({
-			keymap = "gp",
+			keymap = "<leader>p",
 			behavior = "insert_below",
 			formatters = {
 				typescript = function(inside, variable)
@@ -19,7 +19,7 @@ return {
 		})
 
 		-- Print currently hovered word
-		vim.keymap.set("n", "gp", "<Plug>(printer_print)iw", { desc = "Print word under cursor" })
-		vim.keymap.set("v", "gp", "<Plug>(printer_print)", { desc = "Print selection" })
+		vim.keymap.set("n", "<leader>p", "<Plug>(printer_print)iw", { desc = "Print word under cursor" })
+		vim.keymap.set("v", "<leader>p", "<Plug>(printer_print)", { desc = "Print selection" })
 	end,
 }
