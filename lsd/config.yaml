@@ -11,6 +11,7 @@ classic: false
 # Possible values: permission, user, group, context, size, date, name, inode, links, git
 blocks:
   - permission
+  - links
   - user
   - group
   - size
