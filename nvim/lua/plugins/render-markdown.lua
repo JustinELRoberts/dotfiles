@@ -1,6 +1,6 @@
 return {
 	"MeanderingProgrammer/render-markdown.nvim",
-	dependencies = { "echasnovski/mini.nvim" },
+	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		local renderMarkdown = require("render-markdown")
     renderMarkdown.setup({
