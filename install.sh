@@ -19,10 +19,10 @@ for install_script in */install.sh; do
   print_fullwidth_line
 
   # Run the script, storing and logging the result
-  scripts_invoked+=("$(dirname $install_script)")
+  scripts_invoked+=("$(dirname "$install_script")")
   echo "Running $install_script..."
   echo ""
-  sh $install_script
+  bash "$install_script"
   result=$?
   if [ $result -eq 0 ]; then
     echo ""
@@ -35,8 +35,6 @@ for install_script in */install.sh; do
     return_code=1
   fi
 
-  for x in "${!script_return_code_map[@]}"; do printf "[%s]=%s\n" "$x" "${script_return_code_map[$x]}" ; done
-
   # Print a full-width line to separate each script invocation
   print_fullwidth_line
 done
@@ -45,7 +43,7 @@ done
 print_fullwidth_line
 echo "Summary:"
 for (( i=0; i<${#scripts_invoked[@]}; i++ )) do
-  printf "%10s: %s\n" ${scripts_invoked[i]} ${script_results[i]}
+  printf "%10s: %s\n" "${scripts_invoked[i]}" "${script_results[i]}"
 done
 print_fullwidth_line
 
