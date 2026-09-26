@@ -1,5 +1,8 @@
 vim.keymap.set("n", "<leader>cd", vim.lsp.buf.definition)
 
+-- Show inline type/parameter hints for every server that supports them
+vim.lsp.inlay_hint.enable(true)
+
 local use_virtual_lines = true
 
 -- Toggle between virtual_lines (multiline, current line only) and virtual_text (inline at EOL)
