@@ -30,6 +30,9 @@ zvm_after_init_commands+=(vi_mode_overrides)
 # Use oh my zsh
 source $ZSH/oh-my-zsh.sh
 
+# Theme for bat, including when other tools (fzf previews, etc.) invoke it
+export BAT_THEME=base16
+
 # Include aliases
 source ~/.config/zsh/.aliases
 
