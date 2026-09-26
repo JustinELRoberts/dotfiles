@@ -19,6 +19,13 @@ vim.opt.cursorline = true
 -- Keep undo history across restarts (stored in ~/.local/state/nvim/undo/)
 vim.opt.undofile = true
 
+-- Case-insensitive search, unless the pattern contains a capital letter
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+-- Fire CursorHold (gitsigns blame, LSP highlights) after 250ms idle instead of 4s
+vim.opt.updatetime = 250
+
 -- Keybinds to save/quit
 vim.keymap.set('n', '<leader>q', ':wqa<CR>')
 vim.keymap.set('v', '<leader>q', '<Esc><CR>:wqa<CR>')
