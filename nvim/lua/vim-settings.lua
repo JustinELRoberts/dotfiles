@@ -13,6 +13,9 @@ vim.opt.scrolloff = 10
 vim.wo.number = true
 vim.wo.relativenumber = true
 
+-- Always reserve the gutter so gitsigns/diagnostics don't shift the text
+vim.opt.signcolumn = "yes"
+
 -- Highlight the selected row
 vim.opt.cursorline = true
 
