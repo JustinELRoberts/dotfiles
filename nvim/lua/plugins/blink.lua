@@ -1,7 +1,7 @@
 return {
   'saghen/blink.cmp',
   version = '1.*',
-  dependencies = { "onsails/lspkind.nvim", "nvim-tree/nvim-web-devicons" },
+  dependencies = { "nvim-tree/nvim-web-devicons" },
 
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
