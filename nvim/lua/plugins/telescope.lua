@@ -54,6 +54,16 @@ return {
 
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Search help tags" })
 
+		-- Reopen the last picker with its query and results intact
+		vim.keymap.set("n", "<leader>f.", builtin.resume, { desc = "Resume last search" })
+		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Search diagnostics" })
+
+		-- Grep for the word under the cursor (or the visual selection)
+		vim.keymap.set({ "n", "v" }, "<leader>fw", builtin.grep_string, { desc = "Grep word under cursor" })
+
+		-- Jump to a function/struct/etc defined in the current file (needs an LSP)
+		vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, { desc = "Search symbols in file" })
+
 		-- Used to bounce between previous states
 		vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>", { desc = "Search undo history" })
 	end,
