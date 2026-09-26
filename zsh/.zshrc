@@ -44,6 +44,7 @@ source ~/.config/zsh/.aliases
 source ~/.config/lsd/.lscolors
 
 # Initialize starship
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
 
 # Include starship in custom dir

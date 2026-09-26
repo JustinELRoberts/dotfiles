@@ -1,16 +1,19 @@
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-
 # Prompt Engineering Starship:
 # Below is a hack to add newlines between prompts without 
 # adding one at the beginnning of the file (which starship option does)
 PROMPT_NEEDS_NEWLINE=false
 
-precmd() {
+_prompt_newline() {
   if [[ "$PROMPT_NEEDS_NEWLINE" == true ]]; then
     echo
   fi
   PROMPT_NEEDS_NEWLINE=true
 }
+# Register as a hook rather than defining `precmd` itself, so it can't clobber
+# (or be clobbered by) another plugin's precmd. Sourced after `starship init`,
+# so starship's own hook runs first and captures the last command's exit status.
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd _prompt_newline
 
 clear() {
   PROMPT_NEEDS_NEWLINE=false
