@@ -13,7 +13,7 @@ return {
 
       -- Search working directory
       vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Search file names' })
-      vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Search active buffer contents' })
+      vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Search open buffer names' })
       vim.keymap.set('n', '<leader>fr', builtin.lsp_references, { desc = 'Find references to item under cursor' })
       -- Below is a custom finder found in ../telescope/multigrep.lua
       require("telescope.multigrep").setup()
