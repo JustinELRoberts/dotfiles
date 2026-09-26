@@ -2,6 +2,8 @@ return {
 	-- This plugin is used to find files
 	"nvim-telescope/telescope.nvim",
 	branch = "master",
+	-- Load just after startup; still well before any picker or code action is used
+	event = "VeryLazy",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },

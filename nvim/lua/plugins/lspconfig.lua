@@ -52,6 +52,8 @@ return {
 	{
 		-- Installs non-LSP tools (formatters) through Mason
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		-- Only checks the tools are installed, so it can wait until after the UI is up
+		event = "VeryLazy",
 		dependencies = { "mason-org/mason.nvim" },
 		opts = {
 			ensure_installed = { "prettier", "shfmt", "stylua" },
