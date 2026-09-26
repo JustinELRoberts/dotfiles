@@ -5,6 +5,11 @@ return {
 	opts = {
 		-- Centered, bordered floating box (the default "classic" is a borderless full-width bar)
 		preset = "modern",
+		-- Wait 1s of inactivity before popping up (the timer restarts on every keypress).
+		-- Built-in pickers like marks (') and registers (") still show instantly.
+		delay = function(ctx)
+			return ctx.plugin and 0 or 1000
+		end,
 		-- Name the <leader> prefixes
 		spec = {
 			{ "<leader>b", group = "buffers" },
