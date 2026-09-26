@@ -29,11 +29,27 @@ vim.keymap.set('n', '<leader>x', ':.lua<CR>')
 vim.keymap.set('v', '<leader>x', ':lua<CR>')
 
 -- Allow yank to clipboard
-if vim.fn.has("unnamedplus") then
-  vim.g.clipboard = unnamedplus
-else
-  vim.g.clipboard = unnamed
+vim.opt.clipboard = "unnamedplus"
+
+-- Over SSH there is no local clipboard tool to hand the yank to, so round-trip it
+-- through the terminal with OSC 52. Nvim does this on its own, but only when it finds
+-- no clipboard tool on the remote host -- force it so a stray xclip/wl-copy over there
+-- can't quietly capture the yank into *that* machine's clipboard instead.
+if vim.env.SSH_TTY then
+  local osc52 = require("vim.ui.clipboard.osc52")
+  vim.g.clipboard = {
+    name = "OSC 52",
+    copy = { ["+"] = osc52.copy("+"), ["*"] = osc52.copy("*") },
+    paste = { ["+"] = osc52.paste("+"), ["*"] = osc52.paste("*") },
+  }
 end
+
+-- Since every yank/delete goes to the clipboard, keep the two operations that
+-- destroy it without copying anything from doing so.
+-- Visual-mode `p` swaps the clipboard for the text it overwrote; `P` doesn't.
+vim.keymap.set("x", "p", "P")
+-- A single-character delete is never worth losing the clipboard over.
+vim.keymap.set({ "n", "x" }, "x", '"_x')
 
 -- Rounded borders around LSP autocomplete etc
 vim.o.winborder = 'rounded'
