@@ -1,6 +1,6 @@
 # Theming
 theme = dark:Kanagawa Dragon,light:Kanagawa Wave
-font-family = "DroidSansM Nerd Font'
+font-family = DroidSansM Nerd Font
 font-size = 16
 cursor-style-blink = false
 shell-integration-features = no-cursor
