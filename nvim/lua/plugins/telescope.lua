@@ -1,66 +1,60 @@
 return {
-  -- This plugin is used to find files
-  {
-    'nvim-telescope/telescope.nvim',
-    branch = 'master',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-      "debugloop/telescope-undo.nvim",
-    },
-    config = function()
-      local builtin = require('telescope.builtin')
+	-- This plugin is used to find files
+	"nvim-telescope/telescope.nvim",
+	branch = "master",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		"debugloop/telescope-undo.nvim",
+		-- Gives our code actions (from lsp-config.lua) a nice modal popup
+		"nvim-telescope/telescope-ui-select.nvim",
+	},
+	config = function()
+		local telescope = require("telescope")
+		local builtin = require("telescope.builtin")
 
-      -- Search working directory
-      vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Search file names' })
-      vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Search open buffer names' })
-      vim.keymap.set('n', '<leader>fr', builtin.lsp_references, { desc = 'Find references to item under cursor' })
-      -- Below is a custom finder found in ../telescope/multigrep.lua
-      require("telescope.multigrep").setup()
+		telescope.setup({
+			extensions = {
+				["ui-select"] = {
+					require("telescope.themes").get_dropdown({}),
+				},
+				fzf = {},
+			},
+			defaults = {
+				layout_strategy = "vertical",
+				layout_config = {
+					vertical = { width = 0.8 },
+				},
+			},
+		})
 
-      -- Search nvim config, packages, etc
-      vim.keymap.set('n', '<leader>fv', function()
-        builtin.find_files({
-          cwd = vim.fn.stdpath("config")
-        })
-      end, { desc = 'Search neovim config file names' })
+		telescope.load_extension("ui-select")
+		telescope.load_extension("fzf")
+		telescope.load_extension("undo")
 
-      vim.keymap.set('n', '<leader>fp', function()
-        builtin.find_files({
-          cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy")
-        })
-      end, { desc = 'Search every file that is installed in a plugin' })
-      vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Search help tags' })
+		-- Search working directory
+		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Search file names" })
+		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Search open buffer names" })
+		vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "Find references to item under cursor" })
+		-- Below is a custom finder found in ../telescope/multigrep.lua
+		require("telescope.multigrep").setup()
 
-      -- Used to bounce between previous states
-      vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>")
-    end
-  },
+		-- Search nvim config, packages, etc
+		vim.keymap.set("n", "<leader>fv", function()
+			builtin.find_files({
+				cwd = vim.fn.stdpath("config"),
+			})
+		end, { desc = "Search neovim config file names" })
 
-  -- This plugin gives our code actions (from lsp-config.lua) a nice modal popup
-  {
-    'nvim-telescope/telescope-ui-select.nvim',
-    config = function()
-      local telescope = require('telescope')
+		vim.keymap.set("n", "<leader>fp", function()
+			builtin.find_files({
+				cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy"),
+			})
+		end, { desc = "Search every file that is installed in a plugin" })
 
-      telescope.setup {
-        extensions = {
-          ["ui-select"] = {
-            require("telescope.themes").get_dropdown {
-            }
-          },
-          fzf = {},
-        },
-        defaults = {
-          layout_strategy = "vertical",
-          layout_config = {
-            vertical = { width = 0.8 }
-          }
-        },
-      }
+		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Search help tags" })
 
-      telescope.load_extension("ui-select")
-      telescope.load_extension("fzf")
-    end
-  },
+		-- Used to bounce between previous states
+		vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>")
+	end,
 }
