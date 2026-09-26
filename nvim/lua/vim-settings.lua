@@ -16,6 +16,9 @@ vim.wo.relativenumber = true
 -- Always reserve the gutter so gitsigns/diagnostics don't shift the text
 vim.opt.signcolumn = "yes"
 
+-- Wrapped lines continue at the same indent as the line they belong to
+vim.opt.breakindent = true
+
 -- Highlight the selected row
 vim.opt.cursorline = true
 
